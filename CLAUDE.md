@@ -88,7 +88,8 @@ arrow{x1,y1,x2,y2} · map{y,pin:[px,py],label} (grobe Italien-Silhouette) · blo
 army{n,x0,x1,facing,props,pose,scale} ·
 bunker{w,h,label} · reichstag{w} (Kuppel-Gerippe, ~300 px hoch × scale) · warmap{y,w,boxes:[[bx,by],…],label} (Lagekarte auf Staffelei) ·
 towers{h,fill} (Zwillingstürme, ohne Einschlag) · lights{} (Tribute in Light) · boat{fill} · plane{y,facing} · tree{blossom:true} ·
-mountains{h,w} (Alpen) · hut (Almhütte) · pedestal{w,h,text} (Denkmal-Sockel, Figur mit y_off = h draufstellen)
+mountains{h,w} (Alpen) · hut (Almhütte) · pedestal{w,h,text} (Denkmal-Sockel, Figur mit y_off = h draufstellen) ·
+candles{n,x0,x1} (Gedenkkerzen) · warmap kann `box_color` haben
 
 ### Layout-Faustregeln
 - Boden liegt bei ~66 % Höhe; Captions sitzen darunter – nichts Wichtiges unter den Boden setzen.

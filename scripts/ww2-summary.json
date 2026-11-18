@@ -1,0 +1,415 @@
+{
+  "slug": "ww2-summary",
+  "title": "World War II in 30 seconds",
+  "yt_title": "World War II in 30 Seconds 🌍 #history #shorts",
+  "yt_description": "The deadliest war in history, 1939–1945, summarized: from the invasion of Poland to the founding of the United Nations. In memory of the victims.",
+  "tags": [
+    "history",
+    "ww2",
+    "world war 2",
+    "second world war",
+    "1939",
+    "1945",
+    "holocaust",
+    "shorts"
+  ],
+  "sources": [
+    "https://www.britannica.com/event/World-War-II",
+    "https://encyclopedia.ushmm.org/content/en/article/introduction-to-the-holocaust",
+    "https://www.dhm.de/lemo/kapitel/der-zweite-weltkrieg"
+  ],
+  "scenes": [
+    {
+      "narration": "The deadliest war in history. In thirty seconds.",
+      "title": "WORLD WAR II",
+      "year": "1939-1945",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "army",
+          "n": 4,
+          "x0": 0.06,
+          "x1": 0.4,
+          "scale": 0.5,
+          "facing": 1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "stand",
+          "face": "neutral",
+          "color": "grey"
+        },
+        {
+          "type": "army",
+          "n": 4,
+          "x0": 0.6,
+          "x1": 0.94,
+          "scale": 0.5,
+          "facing": -1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "stand",
+          "face": "neutral",
+          "color": "blue"
+        }
+      ]
+    },
+    {
+      "narration": "Germany invades Poland. Britain and France declare war.",
+      "year": "1939",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "army",
+          "n": 3,
+          "x0": 0.06,
+          "x1": 0.36,
+          "scale": 0.5,
+          "facing": 1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "walk",
+          "face": "neutral",
+          "color": "grey"
+        },
+        {
+          "type": "sign",
+          "x": 0.72,
+          "text": "POLAND",
+          "scale": 0.8
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.3,
+          "text": "WAR DECLARED",
+          "size": 100,
+          "color": "red",
+          "t": 1.5
+        }
+      ]
+    },
+    {
+      "narration": "By 1940, Germany controls most of Europe.",
+      "year": "1940",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "warmap",
+          "x": 0.5,
+          "y": 0.47,
+          "w": 0.6,
+          "label": "EUROPE",
+          "box_color": "grey",
+          "boxes": [
+            [
+              0.2,
+              0.3
+            ],
+            [
+              0.4,
+              0.25
+            ],
+            [
+              0.35,
+              0.55
+            ],
+            [
+              0.55,
+              0.45
+            ],
+            [
+              0.7,
+              0.3
+            ],
+            [
+              0.25,
+              0.75
+            ],
+            [
+              0.6,
+              0.7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Germany invades the Soviet Union. Japan bombs Pearl Harbor.",
+      "year": "1941",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "army",
+          "n": 3,
+          "x0": 0.05,
+          "x1": 0.3,
+          "scale": 0.45,
+          "facing": 1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "walk",
+          "face": "neutral",
+          "color": "grey"
+        },
+        {
+          "type": "sign",
+          "x": 0.46,
+          "text": "USSR",
+          "scale": 0.7
+        },
+        {
+          "type": "plane",
+          "x": 0.78,
+          "y": 0.4,
+          "scale": 0.8,
+          "facing": -1,
+          "t": 1.8
+        },
+        {
+          "type": "text",
+          "x": 0.75,
+          "y": 0.5,
+          "text": "PEARL HARBOR",
+          "size": 60,
+          "color": "red",
+          "t": 1.8
+        }
+      ]
+    },
+    {
+      "narration": "Stalingrad and Midway turn the tide.",
+      "year": "1942-1943",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.3,
+          "text": "STALINGRAD",
+          "size": 100
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.37,
+          "text": "MIDWAY",
+          "size": 100,
+          "t": 0.9
+        },
+        {
+          "type": "arrow",
+          "x1": 0.15,
+          "y1": 0.5,
+          "x2": 0.85,
+          "y2": 0.5,
+          "color": "red",
+          "t": 1.6
+        },
+        {
+          "type": "army",
+          "n": 4,
+          "x0": 0.1,
+          "x1": 0.5,
+          "scale": 0.45,
+          "facing": 1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "walk",
+          "face": "neutral",
+          "color": "blue",
+          "t": 1.6
+        }
+      ]
+    },
+    {
+      "narration": "Meanwhile, the Nazis murder six million Jews.",
+      "year": "1941-1945",
+      "zoom": 0.02,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.3,
+          "text": "6,000,000",
+          "size": 150
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.38,
+          "text": "HOLOCAUST",
+          "size": 70,
+          "color": "grey"
+        },
+        {
+          "type": "candles",
+          "n": 6,
+          "x0": 0.2,
+          "x1": 0.8,
+          "scale": 1.1
+        }
+      ]
+    },
+    {
+      "narration": "D-Day. The Allies land in France.",
+      "year": "6 June 1944",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.3,
+          "text": "D-DAY",
+          "size": 140,
+          "color": "blue"
+        },
+        {
+          "type": "river"
+        },
+        {
+          "type": "boat",
+          "x": 0.18,
+          "scale": 0.7,
+          "front": true
+        },
+        {
+          "type": "boat",
+          "x": 0.42,
+          "scale": 0.75,
+          "t": 0.4,
+          "front": true
+        },
+        {
+          "type": "army",
+          "n": 4,
+          "x0": 0.6,
+          "x1": 0.94,
+          "scale": 0.45,
+          "facing": 1,
+          "props": [
+            "steelhelmet"
+          ],
+          "pose": "run",
+          "face": "neutral",
+          "color": "blue",
+          "t": 0.8
+        }
+      ]
+    },
+    {
+      "narration": "Berlin falls. Hitler kills himself. Germany surrenders.",
+      "year": "8 May 1945",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "reichstag",
+          "x": 0.38,
+          "w": 0.6,
+          "scale": 0.9
+        }
+      ],
+      "actors": [
+        {
+          "x": 0.3,
+          "y_off": 270,
+          "pose": "cheer",
+          "face": "neutral",
+          "props": [
+            "steelhelmet",
+            "flag"
+          ],
+          "scale": 0.75
+        },
+        {
+          "label": "Germany",
+          "x": 0.84,
+          "facing": -1,
+          "pose": "cheer",
+          "face": "sad",
+          "props": [
+            "steelhelmet",
+            "whiteflag"
+          ],
+          "color": "grey",
+          "scale": 0.85,
+          "enter": {
+            "t": 1.8,
+            "from": "pop"
+          }
+        }
+      ]
+    },
+    {
+      "narration": "After atomic bombs on Hiroshima and Nagasaki, Japan surrenders.",
+      "year": "Aug-Sep 1945",
+      "zoom": 0.02,
+      "objects": [
+        {
+          "type": "city",
+          "x": 0.5,
+          "w": 0.8,
+          "scale": 0.7,
+          "color": "grey"
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.28,
+          "text": "HIROSHIMA",
+          "size": 95,
+          "color": "grey"
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.35,
+          "text": "NAGASAKI",
+          "size": 95,
+          "color": "grey",
+          "t": 1.7
+        }
+      ]
+    },
+    {
+      "narration": "Up to 70 million dead. The UN is founded so it never happens again.",
+      "year": "1945",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.27,
+          "text": "~70,000,000",
+          "size": 110
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.35,
+          "text": "UNITED NATIONS",
+          "size": 85,
+          "color": "blue",
+          "t": 2.0
+        },
+        {
+          "type": "army",
+          "n": 5,
+          "x0": 0.12,
+          "x1": 0.88,
+          "scale": 0.5,
+          "facing": 1,
+          "props": [],
+          "pose": "wave",
+          "face": "neutral",
+          "t": 2.0
+        }
+      ],
+      "pad": 1.2
+    }
+  ]
+}

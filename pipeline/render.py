@@ -616,7 +616,7 @@ def draw_object(cv, o, t, key):
         cv.circle((x0 + wd * .55, y0 + ht * .5), 26 * s, fill=RED, outline=c, w=5, key=key + "pin")
         for i, (bx, by) in enumerate(o.get("boxes", [])):
             px, py = x0 + bx * wd, y0 + by * ht
-            cv.poly([(px - 28 * s, py - 18 * s), (px + 28 * s, py - 18 * s), (px + 28 * s, py + 18 * s), (px - 28 * s, py + 18 * s)], fill=BLUE, outline=c, w=4, key=key + f"bx{i}")
+            cv.poly([(px - 28 * s, py - 18 * s), (px + 28 * s, py - 18 * s), (px + 28 * s, py + 18 * s), (px - 28 * s, py + 18 * s)], fill=col(o.get("box_color"), BLUE), outline=c, w=4, key=key + f"bx{i}")
         if o.get("label"):
             cv.text((x, y0 - 40 * s), o["label"], size=int(50 * s), c=c)
     elif typ == "towers":   # two tall outlined towers (memorial-style, no impact imagery)
@@ -670,6 +670,13 @@ def draw_object(cv, o, t, key):
         cv.poly([(x0, GROUND_Y), (x0, GROUND_Y - ht), (x0 + wd, GROUND_Y - ht), (x0 + wd, GROUND_Y)], fill=(205, 202, 195), outline=c, key=key)
         if o.get("text"):
             cv.text((x, GROUND_Y - ht / 2), o["text"], size=int(min(50, 260 / max(1, len(o["text"]))) * s), c=INK)
+    elif typ == "candles":   # row of memorial candles with flickering flames
+        n = o.get("n", 5); x0 = o.get("x0", .2) * W; x1 = o.get("x1", .8) * W
+        for i in range(n):
+            cx_ = lerp(x0, x1, i / max(1, n - 1)); hh = (110 + 40 * ((i * 7) % 3)) * s
+            cv.poly([(cx_ - 22 * s, GROUND_Y), (cx_ - 22 * s, GROUND_Y - hh), (cx_ + 22 * s, GROUND_Y - hh), (cx_ + 22 * s, GROUND_Y)], fill=WHITE, outline=c, w=6, key=key + f"cd{i}")
+            fl = 1 + .12 * math.sin(t * 9 + i * 1.7)
+            cv.poly([(cx_, GROUND_Y - hh - 62 * s * fl), (cx_ + 15 * s, GROUND_Y - hh - 18 * s), (cx_, GROUND_Y - hh - 4 * s), (cx_ - 15 * s, GROUND_Y - hh - 18 * s)], fill=GOLD, outline=(230, 140, 40), w=4, key=key + f"fl{i}")
     elif typ == "army":
         n = o.get("n", 6); x0 = o.get("x0", .1) * W; x1 = o.get("x1", .9) * W
         f = o.get("facing", 1)

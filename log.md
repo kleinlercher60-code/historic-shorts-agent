@@ -5,3 +5,4 @@
 | 2026-11-18 | battle-of-berlin | 31.8 s | Hitler Defended Berlin With Imaginary Armies |
 | 2026-11-18 | 9-11-ten-facts | 35.8 s | 10 Facts About 9/11 You Should Know |
 | 2026-11-18 | andreas-hofer | 33.6 s | The Innkeeper Who Beat Napoleon's Armies |
+| 2026-11-18 | ww2-summary | 32.8 s | World War II in 30 Seconds |

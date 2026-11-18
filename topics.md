@@ -4,6 +4,7 @@
 - [x] Battle of Berlin – Hitler's imaginary armies & the retouched Reichstag photo
 - [x] 10 facts about 9/11 (sachlicher Ton, keine Witze)
 - [x] Andreas Hofer – the innkeeper who beat Napoleon's armies
+- [x] World War II in 30 seconds (sachlicher Ton)
 - [ ] The Great Emu War – Australia lost a war to birds
 - [ ] Caligula made his horse a senator (almost)
 - [ ] Napoleon attacked by rabbits
