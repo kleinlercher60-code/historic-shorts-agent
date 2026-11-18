@@ -40,6 +40,9 @@ def font(size, bold=True):
         _font_cache[key] = ImageFont.truetype(FONT_BOLD if bold else FONT_REG, size)
     return _font_cache[key]
 
+def o_col(c, default):
+    return col(c, default) if c else default
+
 def col(c, default=INK):
     if c is None:
         return default
@@ -303,6 +306,24 @@ def draw_figure(cv, st, key):
         if "beard" in props:
             pts = [(hx - hr * .6 * facing + hr * .2 * facing, hy + hr * .45), (hx + hr * .55 * facing, hy + hr * .55), (hx + hr * .2 * facing, hy + hr * 1.25)]
             cv.poly(pts, fill=INK, outline=c, w=w * .4, key=key + "beard")
+        if "mustache" in props:
+            mx, my = hx + hr * .28 * facing, hy + hr * .22
+            cv.poly([(mx - hr * .13, my - hr * .07), (mx + hr * .13, my - hr * .07), (mx + hr * .13, my + hr * .08), (mx - hr * .13, my + hr * .08)],
+                    fill=INK, outline=INK, w=w * .3, key=key + "mus")
+        if "cap" in props:   # peaked officer cap
+            b = hy - hr * .62
+            cv.poly([(hx - hr * .95, b), (hx - hr * 1.15, b - hr * .55), (hx + hr * 1.15, b - hr * .55), (hx + hr * .95, b)],
+                    fill=GREY, outline=c, w=w * .6, key=key + "cap")
+            cv.poly([(hx + hr * .2 * facing, b), (hx + hr * 1.35 * facing, b + hr * .12), (hx + hr * .9 * facing, b - hr * .1)],
+                    fill=INK, outline=c, w=w * .4, key=key + "visor")
+        if "steelhelmet" in props:   # plain WWII helmet, no insignia
+            rr = hr + 8 * s
+            pts = [(hx + math.cos(math.radians(a)) * rr, hy - hr * .15 + math.sin(math.radians(a)) * rr) for a in range(180, 361, 15)]
+            pts = [(hx - rr - 14 * s, hy - hr * .05)] + pts + [(hx + rr + 14 * s, hy - hr * .05)]
+            cv.poly(pts, fill=o_col(st.get("helmet_color"), (96, 112, 84)), outline=c, w=w * .6, key=key + "shelm")
+        if "ushanka" in props:
+            cv.poly([(hx - hr * 1.0, hy - hr * .35), (hx - hr * .9, hy - hr * 1.25), (hx + hr * .9, hy - hr * 1.25), (hx + hr * 1.0, hy - hr * .35)],
+                    fill=(120, 95, 70), outline=c, w=w * .6, key=key + "ush")
         if "hat" in props:
             cv.poly([(hx - hr * 1.2, hy - hr * .7), (hx + hr * 1.2, hy - hr * .7), (hx + hr * .6, hy - hr * .9),
                      (hx + hr * .5, hy - hr * 1.7), (hx - hr * .5, hy - hr * 1.7), (hx - hr * .6, hy - hr * .9)],
@@ -330,6 +351,22 @@ def draw_figure(cv, st, key):
         top = along(h1, 180, 70 * s)
         cv.line(h1, top, w * .8, (120, 80, 40), key + "tor")
         cv.circle((top[0], top[1] - 18 * s), 20 * s, fill=(245, 150, 40), outline=RED, w=w * .4, key=key + "fl")
+    if "flag" in props or "whiteflag" in props:      # plain red (or white = surrender) banner on a pole
+        top = along(h1, 180, 230 * s)
+        bot = along(h1, 0, 60 * s)
+        cv.line(bot, top, w * .7, (120, 80, 40), key + "fpole")
+        wv = math.sin(st.get("t", 0) * 6) * 10 * s
+        fx = 1 if facing > 0 else -1
+        cv.poly([top, (top[0] + 150 * s * fx, top[1] + 15 * s + wv), (top[0] + 145 * s * fx, top[1] + 100 * s + wv), (top[0], top[1] + 90 * s)],
+                fill=WHITE if "whiteflag" in props else RED, outline=c, w=w * .5, key=key + "flag")
+    if "camera" in props:
+        cv.poly([(h1[0] - 34 * s, h1[1] - 28 * s), (h1[0] + 34 * s, h1[1] - 28 * s), (h1[0] + 34 * s, h1[1] + 22 * s), (h1[0] - 34 * s, h1[1] + 22 * s)],
+                fill=INK, outline=c, w=w * .4, key=key + "cam")
+        cv.circle((h1[0] + 20 * s * facing, h1[1] - 3 * s), 14 * s, fill=GREY, outline=c, w=w * .3, key=key + "lens")
+    for wi, (ee, hh) in enumerate(((e1, h1), (e2, h2))):
+        if "watches" in props or ("watch" in props and wi == 0):
+            wp = (lerp(ee[0], hh[0], .78), lerp(ee[1], hh[1], .78))
+            cv.circle(wp, 22 * s, fill=GOLD, outline=c, w=w * .45, key=key + f"wat{wi}")
     if "shield" in props:
         cv.circle(h2, 52 * s, fill=RED, outline=c, w=w * .7, key=key + "sh")
         cv.circle(h2, 14 * s, fill=GOLD, outline=c, w=w * .4, key=key + "shb")
@@ -518,6 +555,44 @@ def draw_object(cv, o, t, key):
             rr = (60 if i % 2 else 34) * s * r.uniform(.8, 1.2)
             pts.append((cx_ + math.cos(a) * rr * 1.6, cy_ + math.sin(a) * rr * .45))
         cv.poly(pts, fill=RED, outline=None, key=key)
+    elif typ == "bunker":
+        wd = o.get("w", .5) * W * s; ht = o.get("h", 170) * s
+        x0 = x - wd / 2
+        cv.poly([(x0, GROUND_Y), (x0 + 30 * s, GROUND_Y - ht), (x0 + wd - 30 * s, GROUND_Y - ht), (x0 + wd, GROUND_Y)], fill=(190, 186, 176), outline=c, key=key)
+        cv.poly([(x - 45 * s, GROUND_Y), (x - 45 * s, GROUND_Y - 95 * s), (x + 45 * s, GROUND_Y - 95 * s), (x + 45 * s, GROUND_Y)], fill=INK, outline=c, w=5, key=key + "door")
+        if o.get("label"):
+            cv.text((x, GROUND_Y - ht - 50 * s), o["label"], size=int(52 * s), c=c)
+    elif typ == "reichstag":
+        wd = o.get("w", .7) * W * s; ht = 300 * s
+        x0 = x - wd / 2
+        cv.poly([(x0, GROUND_Y), (x0, GROUND_Y - ht), (x0 + wd, GROUND_Y - ht), (x0 + wd, GROUND_Y)], fill=(232, 222, 200), outline=c, key=key + "b")
+        for i in (0, 1):   # corner towers
+            tx = x0 + i * (wd - wd * .16)
+            cv.poly([(tx, GROUND_Y - ht), (tx, GROUND_Y - ht - 110 * s), (tx + wd * .16, GROUND_Y - ht - 110 * s), (tx + wd * .16, GROUND_Y - ht)], fill=(232, 222, 200), outline=c, key=key + f"t{i}")
+        # portico columns
+        for i in range(6):
+            cx_ = x - wd * .22 + i * wd * .44 / 5
+            cv.line((cx_, GROUND_Y), (cx_, GROUND_Y - ht * .78), LINE_W * .6, c, key + f"c{i}")
+        cv.poly([(x - wd * .27, GROUND_Y - ht * .78), (x, GROUND_Y - ht - 20 * s), (x + wd * .27, GROUND_Y - ht * .78)], fill=(240, 232, 214), outline=c, key=key + "ped")
+        # (bombed-out) dome skeleton
+        dr = wd * .2
+        for a in range(0, 181, 30):
+            ar = math.radians(180 + a)
+            cv.line((x, GROUND_Y - ht - 20 * s), (x + math.cos(ar) * dr, GROUND_Y - ht - 20 * s + math.sin(ar) * dr * .9), LINE_W * .5, c, key + f"d{a}")
+        cv.polyline([(x + math.cos(math.radians(a)) * dr, GROUND_Y - ht - 20 * s + math.sin(math.radians(a)) * dr * .9) for a in range(180, 361, 15)], LINE_W * .6, c, key + "dome")
+    elif typ == "warmap":   # board on an easel, generic front lines + optional little division boxes
+        wd = o.get("w", .42) * W * s; ht = wd * .75
+        cy_ = o.get("y", .44) * H
+        x0, y0 = x - wd / 2, cy_ - ht / 2
+        cv.line((x - wd * .3, GROUND_Y), (x - wd * .2, y0 + ht), LINE_W * .8, (120, 80, 40), key + "leg1")
+        cv.line((x + wd * .3, GROUND_Y), (x + wd * .2, y0 + ht), LINE_W * .8, (120, 80, 40), key + "leg2")
+        cv.poly([(x0, y0), (x0 + wd, y0), (x0 + wd, y0 + ht), (x0, y0 + ht)], fill=(225, 235, 205), outline=c, key=key)
+        cv.circle((x0 + wd * .55, y0 + ht * .5), 26 * s, fill=RED, outline=c, w=5, key=key + "pin")
+        for i, (bx, by) in enumerate(o.get("boxes", [])):
+            px, py = x0 + bx * wd, y0 + by * ht
+            cv.poly([(px - 28 * s, py - 18 * s), (px + 28 * s, py - 18 * s), (px + 28 * s, py + 18 * s), (px - 28 * s, py + 18 * s)], fill=BLUE, outline=c, w=4, key=key + f"bx{i}")
+        if o.get("label"):
+            cv.text((x, y0 - 40 * s), o["label"], size=int(50 * s), c=c)
     elif typ == "army":
         n = o.get("n", 6); x0 = o.get("x0", .1) * W; x1 = o.get("x1", .9) * W
         f = o.get("facing", 1)
@@ -536,7 +611,7 @@ BLEND = 0.18
 def actor_state(a, t):
     st = dict(x=a.get("x", .5) * W, facing=a.get("facing", 1), scale=a.get("scale", 1.0),
               props=list(a.get("props", [])), face=a.get("face", "neutral"), label=a.get("label"),
-              color=col(a.get("color"), INK), y_off=0, fallen=0, visible=True, label_color=col(a.get("label_color"), INK))
+              color=col(a.get("color"), INK), y_off=a.get("y_off", 0), fallen=0, visible=True, label_color=col(a.get("label_color"), INK))
     pose, prev_pose, pose_t = a.get("pose", "stand"), a.get("pose", "stand"), -10
     bubble = None
     enter = a.get("enter")

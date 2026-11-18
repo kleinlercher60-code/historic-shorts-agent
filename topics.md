@@ -1,6 +1,7 @@
 # Topic queue (der Agent nimmt das erste offene)
 
 - [x] Romulus & Remus – Rome founded with a murder
+- [x] Battle of Berlin – Hitler's imaginary armies & the retouched Reichstag photo
 - [ ] The Great Emu War – Australia lost a war to birds
 - [ ] Caligula made his horse a senator (almost)
 - [ ] Napoleon attacked by rabbits

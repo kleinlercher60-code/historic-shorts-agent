@@ -70,7 +70,10 @@ Ablauf unten ohne Rückfragen durch und lieferst die fertige MP4.
 - **Posen**: stand, point, cheer, sad, shrug, think, fight, angry, scared, facepalm, sit, kneel, hold,
   crown_self, walk, run, wave, dance, laugh
 - **Gesichter**: neutral, happy, sad, angry, shock, scared, smug, laugh, dead
-- **Props**: crown, laurel, helmet, hat, beard, toga, cape, armor, sword, spear, shield, scroll, torch
+- **Props**: crown, laurel, helmet, hat, beard, toga, cape, armor, sword, spear, shield, scroll, torch,
+  mustache, cap (Schirmmütze), steelhelmet (WWII-Helm, ohne Abzeichen), ushanka, flag (rote Fahne), whiteflag,
+  camera, watch (1 Armbanduhr), watches (an beiden Handgelenken)
+- `y_off`: Figur steht erhöht (Pixel über dem Boden, z. B. 270 = auf dem Reichstag-Dach)
 - **Aktionen** (`{"t":…, "do":…}`):
   `pose{pose}`, `face{face}`, `say{text,dur,shout}`, `walk_to{x,dur,face_after}`, `run_to{x,dur}`,
   `jump{dur,h}`, `fall{}` (fällt nach hinten um, X-Augen), `flip`, `shake{dur}`, `grow{scale,dur}`,
@@ -80,7 +83,8 @@ Ablauf unten ohne Rückfragen durch und lieferst die fertige MP4.
 hill{w,h} · wall{w,h} · city{w,label} · temple{w} · throne · grave{text} · tree · sun{y} · river ·
 basket{babies,bob} · wolf{facing} · sign{text} · text{text,y,size,color,angle,wrap} ·
 arrow{x1,y1,x2,y2} · map{y,pin:[px,py],label} (grobe Italien-Silhouette) · blood{y} (Cartoon-Klecks) ·
-army{n,x0,x1,facing,props,pose,scale}
+army{n,x0,x1,facing,props,pose,scale} ·
+bunker{w,h,label} · reichstag{w} (Kuppel-Gerippe, ~300 px hoch × scale) · warmap{y,w,boxes:[[bx,by],…],label} (Lagekarte auf Staffelei)
 
 ### Layout-Faustregeln
 - Boden liegt bei ~66 % Höhe; Captions sitzen darunter – nichts Wichtiges unter den Boden setzen.
