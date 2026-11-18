@@ -321,6 +321,17 @@ def draw_figure(cv, st, key):
             pts = [(hx + math.cos(math.radians(a)) * rr, hy - hr * .15 + math.sin(math.radians(a)) * rr) for a in range(180, 361, 15)]
             pts = [(hx - rr - 14 * s, hy - hr * .05)] + pts + [(hx + rr + 14 * s, hy - hr * .05)]
             cv.poly(pts, fill=o_col(st.get("helmet_color"), (96, 112, 84)), outline=c, w=w * .6, key=key + "shelm")
+        if "bicorne" in props:   # Napoleon-style hat, worn sideways
+            b = hy - hr * .55
+            pts = [(hx - hr * 1.5, b)] + [(hx + math.cos(math.radians(a)) * hr * 1.5, b + math.sin(math.radians(a)) * hr * .95) for a in range(195, 346, 15)] + [(hx + hr * 1.5, b)]
+            cv.poly(pts, fill=INK, outline=c, w=w * .5, key=key + "bic")
+            cv.circle((hx, b - hr * .45), hr * .16, fill=RED, outline=None, key=key + "cock")
+        if "tyrolhat" in props:  # wide-brimmed black hat with green band + feather
+            b = hy - hr * .7
+            cv.poly([(hx - hr * 1.45, b), (hx + hr * 1.45, b), (hx + hr * 1.3, b - hr * .18), (hx - hr * 1.3, b - hr * .18)], fill=INK, outline=c, w=w * .4, key=key + "tbrim")
+            cv.poly([(hx - hr * .75, b - hr * .15), (hx - hr * .65, b - hr * .85), (hx + hr * .65, b - hr * .85), (hx + hr * .75, b - hr * .15)], fill=INK, outline=c, w=w * .4, key=key + "tcrown")
+            cv.line((hx - hr * .72, b - hr * .3), (hx + hr * .72, b - hr * .3), w * .9, GREEN, key + "tband")
+            cv.line((hx - hr * .55 * facing, b - hr * .4), (hx - hr * 1.1 * facing, b - hr * 1.5), w * .5, GREEN, key + "feather")
         if "firehelmet" in props:
             rr = hr + 8 * s
             pts = [(hx + math.cos(math.radians(a)) * rr, hy - hr * .2 + math.sin(math.radians(a)) * rr) for a in range(180, 361, 15)]
@@ -365,6 +376,10 @@ def draw_figure(cv, st, key):
         fx = 1 if facing > 0 else -1
         cv.poly([top, (top[0] + 150 * s * fx, top[1] + 15 * s + wv), (top[0] + 145 * s * fx, top[1] + 100 * s + wv), (top[0], top[1] + 90 * s)],
                 fill=WHITE if "whiteflag" in props else RED, outline=c, w=w * .5, key=key + "flag")
+    if "musket" in props:
+        tip = along(h1, fa_dir, 190 * s); butt = along(h1, fa_dir + 180, 70 * s)
+        cv.line(butt, tip, w * .9, (110, 75, 45), key + "mus")
+        cv.line(along(h1, fa_dir, 90 * s), tip, w * .45, (90, 90, 96), key + "barrel")
     if "camera" in props:
         cv.poly([(h1[0] - 34 * s, h1[1] - 28 * s), (h1[0] + 34 * s, h1[1] - 28 * s), (h1[0] + 34 * s, h1[1] + 22 * s), (h1[0] - 34 * s, h1[1] + 22 * s)],
                 fill=INK, outline=c, w=w * .4, key=key + "cam")
@@ -379,7 +394,7 @@ def draw_figure(cv, st, key):
     # front arm last (over body / props)
     cv.polyline([shoulder, e1, h1], w, c, key + "fa")
     if st.get("label") and not fall:
-        top = min(head_c[1] - L["head"], hip[1]) - (70 * s if any(p in props for p in ("crown", "helmet", "hat")) else 30 * s)
+        top = min(head_c[1] - L["head"], hip[1]) - (70 * s if any(p in props for p in ("crown", "helmet", "hat", "tyrolhat", "bicorne", "cap", "steelhelmet", "firehelmet", "ushanka")) else 30 * s)
         lx = max(40 + len(st["label"]) * 14 * s, min(W - 40 - len(st["label"]) * 14 * s, head_c[0]))
         cv.text((lx, top - 22 * s), st["label"], size=int(52 * max(.7, s)), c=st.get("label_color", INK))
     return head_c, L["head"]
@@ -636,6 +651,25 @@ def draw_object(cv, o, t, key):
         cv.poly([(x - L * .38 * f, y - 20 * s), (x - L * .5 * f, y - 100 * s), (x - L * .42 * f, y - 100 * s), (x - L * .28 * f, y - 20 * s)], fill=(220, 224, 230), outline=c, w=6, key=key + "tail")
         for i in range(5):
             cv.dot((x - 60 * s * f + i * 35 * s * f, y - 8 * s), 6 * s, fill=BLUE)
+    elif typ == "mountains":   # Alps backdrop with snow caps
+        wd = o.get("w", 1.1) * W; ht = o.get("h", 420) * s
+        peaks = [(-.45, .75), (-.18, 1.0), (.1, .8), (.35, .95)]
+        for i, (dx, hk) in enumerate(peaks):
+            px, ph = x + dx * wd, ht * hk; bw = wd * .22
+            cv.poly([(px - bw, GROUND_Y), (px, GROUND_Y - ph), (px + bw, GROUND_Y)], fill=(205, 205, 200), outline=c, key=key + f"m{i}")
+            cv.poly([(px - bw * .28, GROUND_Y - ph * .72), (px, GROUND_Y - ph), (px + bw * .28, GROUND_Y - ph * .72), (px + bw * .1, GROUND_Y - ph * .78), (px - bw * .08, GROUND_Y - ph * .7)], fill=WHITE, outline=c, w=5, key=key + f"sn{i}")
+    elif typ == "hut":
+        wd = 260 * s; ht = 170 * s; x0 = x - wd / 2
+        cv.poly([(x0, GROUND_Y), (x0, GROUND_Y - ht), (x0 + wd, GROUND_Y - ht), (x0 + wd, GROUND_Y)], fill=(170, 120, 75), outline=c, key=key + "w")
+        for j in range(1, 4):
+            cv.line((x0, GROUND_Y - ht * j / 4), (x0 + wd, GROUND_Y - ht * j / 4), LINE_W * .4, c, key + f"lg{j}")
+        cv.poly([(x0 - 30 * s, GROUND_Y - ht), (x, GROUND_Y - ht - 110 * s), (x0 + wd + 30 * s, GROUND_Y - ht)], fill=(120, 85, 55), outline=c, key=key + "roof")
+        cv.poly([(x - 30 * s, GROUND_Y), (x - 30 * s, GROUND_Y - 100 * s), (x + 30 * s, GROUND_Y - 100 * s), (x + 30 * s, GROUND_Y)], fill=INK, outline=c, w=5, key=key + "door")
+    elif typ == "pedestal":
+        wd = o.get("w", .3) * W * s; ht = o.get("h", 200) * s; x0 = x - wd / 2
+        cv.poly([(x0, GROUND_Y), (x0, GROUND_Y - ht), (x0 + wd, GROUND_Y - ht), (x0 + wd, GROUND_Y)], fill=(205, 202, 195), outline=c, key=key)
+        if o.get("text"):
+            cv.text((x, GROUND_Y - ht / 2), o["text"], size=int(min(50, 260 / max(1, len(o["text"]))) * s), c=INK)
     elif typ == "army":
         n = o.get("n", 6); x0 = o.get("x0", .1) * W; x1 = o.get("x1", .9) * W
         f = o.get("facing", 1)

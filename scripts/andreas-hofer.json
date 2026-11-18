@@ -1,0 +1,447 @@
+{
+  "slug": "andreas-hofer",
+  "title": "Andreas Hofer",
+  "yt_title": "The Innkeeper Who Beat Napoleon's Armies 🍺⛰️ #history #shorts",
+  "yt_description": "1809: a bearded Tyrolean innkeeper and an army of farmers beat Napoleon's allies three times, ran Tyrol from the palace in Innsbruck – and then Austria gave Tyrol away. The story of Andreas Hofer.",
+  "tags": [
+    "history",
+    "andreas hofer",
+    "tyrol",
+    "tirol",
+    "napoleon",
+    "1809",
+    "austria",
+    "shorts"
+  ],
+  "sources": [
+    "https://austria-forum.org/af/AEIOU/Hofer%2C_Andreas/Hofer%2C_Andreas_english",
+    "https://www.habsburger.net/en/chapter/resistance-holy-land-tyrol-tyrolean-taliban",
+    "https://www.discover-innsbruck.at/en/?p=54516",
+    "https://www.madamegilflurt.com/2015/02/the-execution-of-andreas-hofer.html"
+  ],
+  "scenes": [
+    {
+      "narration": "A bearded innkeeper beat Napoleon's armies. Three times.",
+      "title": "ANDREAS HOFER",
+      "year": "1809",
+      "objects": [
+        {
+          "type": "mountains",
+          "x": 0.5,
+          "h": 330,
+          "scale": 0.9
+        },
+        {
+          "type": "text",
+          "x": 0.74,
+          "y": 0.42,
+          "text": "3 : 0",
+          "size": 140,
+          "color": "red",
+          "angle": -6,
+          "t": 2.3
+        }
+      ],
+      "actors": [
+        {
+          "label": "Hofer",
+          "x": 0.3,
+          "pose": "cheer",
+          "face": "happy",
+          "props": [
+            "beard",
+            "tyrolhat"
+          ],
+          "actions": [
+            {
+              "t": 2.3,
+              "do": "pose",
+              "pose": "laugh"
+            },
+            {
+              "t": 2.3,
+              "do": "face",
+              "face": "laugh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "In 1809, Napoleon's ally Bavaria ruled Tyrol. Tyroleans hated it.",
+      "objects": [
+        {
+          "type": "mountains",
+          "x": 0.5,
+          "h": 300,
+          "scale": 0.8
+        }
+      ],
+      "actors": [
+        {
+          "label": "Bavaria",
+          "x": 0.3,
+          "pose": "point",
+          "face": "smug",
+          "props": [
+            "crown"
+          ],
+          "color": "blue",
+          "actions": [
+            {
+              "t": 1.0,
+              "do": "say",
+              "text": "MORE TAXES!",
+              "dur": 1.6,
+              "shout": true
+            }
+          ]
+        },
+        {
+          "label": "Tyrol",
+          "x": 0.74,
+          "facing": -1,
+          "pose": "stand",
+          "face": "neutral",
+          "props": [
+            "tyrolhat"
+          ],
+          "actions": [
+            {
+              "t": 3.6,
+              "do": "pose",
+              "pose": "angry"
+            },
+            {
+              "t": 3.6,
+              "do": "face",
+              "face": "angry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Hofer rallied farmers with old rifles. They won. Three times.",
+      "objects": [
+        {
+          "type": "hill",
+          "x": 0.5,
+          "w": 1.1,
+          "h": 80,
+          "label": "Bergisel"
+        },
+        {
+          "type": "army",
+          "n": 4,
+          "x0": 0.06,
+          "x1": 0.36,
+          "scale": 0.5,
+          "facing": 1,
+          "props": [
+            "tyrolhat",
+            "musket"
+          ],
+          "pose": "fight",
+          "face": "angry"
+        },
+        {
+          "type": "army",
+          "n": 3,
+          "x0": 0.7,
+          "x1": 0.94,
+          "scale": 0.5,
+          "facing": -1,
+          "props": [
+            "bicorne"
+          ],
+          "pose": "scared",
+          "face": "scared",
+          "color": "blue",
+          "until": 2.2
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.34,
+          "text": "WIN WIN WIN",
+          "size": 100,
+          "color": "green",
+          "angle": -6,
+          "t": 2.2
+        }
+      ],
+      "shakes": [
+        2.2
+      ]
+    },
+    {
+      "narration": "He moved into the palace in Innsbruck and ran Tyrol. Briefly.",
+      "year": "Aug 1809",
+      "objects": [
+        {
+          "type": "temple",
+          "x": 0.5,
+          "w": 0.6,
+          "scale": 1.35
+        },
+        {
+          "type": "throne",
+          "x": 0.5,
+          "scale": 0.8
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.27,
+          "text": "(2 months)",
+          "size": 80,
+          "t": 3.0
+        }
+      ],
+      "actors": [
+        {
+          "x": 0.5,
+          "pose": "sit",
+          "face": "smug",
+          "props": [
+            "beard",
+            "tyrolhat"
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Then Austria made peace with Napoleon. And gave Tyrol away.",
+      "year": "Oct 1809",
+      "objects": [
+        {
+          "type": "sign",
+          "x": 0.5,
+          "text": "TYROL",
+          "scale": 0.7,
+          "t": 2.2
+        }
+      ],
+      "actors": [
+        {
+          "label": "Austria",
+          "x": 0.2,
+          "pose": "point",
+          "face": "happy",
+          "props": [
+            "crown"
+          ]
+        },
+        {
+          "label": "Napoleon",
+          "x": 0.8,
+          "facing": -1,
+          "pose": "point",
+          "face": "smug",
+          "props": [
+            "bicorne"
+          ],
+          "scale": 0.85,
+          "actions": [
+            {
+              "t": 0.6,
+              "do": "say",
+              "text": "deal?",
+              "dur": 1.2
+            },
+            {
+              "t": 2.6,
+              "do": "face",
+              "face": "laugh"
+            },
+            {
+              "t": 2.6,
+              "do": "pose",
+              "pose": "laugh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Hofer hid in a mountain hut. His neighbor sold him out.",
+      "year": "1810",
+      "objects": [
+        {
+          "type": "mountains",
+          "x": 0.4,
+          "h": 380,
+          "scale": 0.9
+        },
+        {
+          "type": "hut",
+          "x": 0.26,
+          "scale": 1.0
+        },
+        {
+          "type": "text",
+          "x": 0.25,
+          "y": 0.29,
+          "text": "1,500 gulden",
+          "size": 80,
+          "color": "gold",
+          "t": 1.7
+        }
+      ],
+      "actors": [
+        {
+          "label": "Neighbor",
+          "x": 0.72,
+          "facing": -1,
+          "pose": "stand",
+          "face": "neutral",
+          "actions": [
+            {
+              "t": 1.7,
+              "do": "pose",
+              "pose": "point"
+            },
+            {
+              "t": 1.7,
+              "do": "face",
+              "face": "smug"
+            },
+            {
+              "t": 1.7,
+              "do": "say",
+              "text": "He's in there",
+              "dur": 1.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "In Mantua, he refused the blindfold, refused to kneel, and gave the fire order himself.",
+      "year": "Mantua, 1810",
+      "objects": [
+        {
+          "type": "army",
+          "n": 3,
+          "x0": 0.66,
+          "x1": 0.92,
+          "scale": 0.6,
+          "facing": -1,
+          "props": [
+            "musket"
+          ],
+          "pose": "point",
+          "face": "neutral",
+          "color": "blue"
+        }
+      ],
+      "actors": [
+        {
+          "label": "Hofer",
+          "x": 0.24,
+          "pose": "stand",
+          "face": "neutral",
+          "props": [
+            "beard"
+          ],
+          "actions": [
+            {
+              "t": 1.1,
+              "do": "pose",
+              "pose": "shrug"
+            },
+            {
+              "t": 2.0,
+              "do": "pose",
+              "pose": "stand"
+            },
+            {
+              "t": 2.0,
+              "do": "face",
+              "face": "angry"
+            },
+            {
+              "t": 3.3,
+              "do": "pose",
+              "pose": "point"
+            },
+            {
+              "t": 3.3,
+              "do": "say",
+              "text": "FIRE!",
+              "dur": 1.4,
+              "shout": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Today he's Tyrol's national hero. The neighbor? Not so much.",
+      "objects": [
+        {
+          "type": "mountains",
+          "x": 0.5,
+          "h": 300,
+          "scale": 0.8
+        },
+        {
+          "type": "pedestal",
+          "x": 0.35,
+          "w": 0.3,
+          "h": 200,
+          "text": "HOFER"
+        },
+        {
+          "type": "text",
+          "x": 0.35,
+          "y": 0.22,
+          "text": "HERO",
+          "size": 100,
+          "color": "gold",
+          "t": 0.6
+        }
+      ],
+      "actors": [
+        {
+          "x": 0.35,
+          "y_off": 200,
+          "pose": "point",
+          "face": "neutral",
+          "props": [
+            "beard",
+            "tyrolhat"
+          ],
+          "color": "grey",
+          "scale": 0.9
+        },
+        {
+          "label": "Neighbor",
+          "x": 0.8,
+          "facing": -1,
+          "pose": "stand",
+          "face": "neutral",
+          "scale": 0.85,
+          "enter": {
+            "t": 2.2,
+            "from": "pop"
+          },
+          "actions": [
+            {
+              "t": 3.1,
+              "do": "pose",
+              "pose": "sad"
+            },
+            {
+              "t": 3.1,
+              "do": "face",
+              "face": "sad"
+            }
+          ]
+        }
+      ],
+      "pad": 0.9
+    }
+  ]
+}

@@ -73,7 +73,7 @@ Ablauf unten ohne Rückfragen durch und lieferst die fertige MP4.
   crown_self, walk, run, wave, dance, laugh
 - **Gesichter**: neutral, happy, sad, angry, shock, scared, smug, laugh, dead
 - **Props**: crown, laurel, helmet, hat, beard, toga, cape, armor, sword, spear, shield, scroll, torch,
-  firehelmet, mustache, cap (Schirmmütze), steelhelmet (WWII-Helm, ohne Abzeichen), ushanka, flag (rote Fahne), whiteflag,
+  firehelmet, bicorne (Napoleon-Zweispitz), tyrolhat (Tiroler Hut), musket, mustache, cap (Schirmmütze), steelhelmet (WWII-Helm, ohne Abzeichen), ushanka, flag (rote Fahne), whiteflag,
   camera, watch (1 Armbanduhr), watches (an beiden Handgelenken)
 - `y_off`: Figur steht erhöht (Pixel über dem Boden, z. B. 270 = auf dem Reichstag-Dach)
 - **Aktionen** (`{"t":…, "do":…}`):
@@ -87,7 +87,8 @@ basket{babies,bob} · wolf{facing} · sign{text} · text{text,y,size,color,angle
 arrow{x1,y1,x2,y2} · map{y,pin:[px,py],label} (grobe Italien-Silhouette) · blood{y} (Cartoon-Klecks) ·
 army{n,x0,x1,facing,props,pose,scale} ·
 bunker{w,h,label} · reichstag{w} (Kuppel-Gerippe, ~300 px hoch × scale) · warmap{y,w,boxes:[[bx,by],…],label} (Lagekarte auf Staffelei) ·
-towers{h,fill} (Zwillingstürme, ohne Einschlag) · lights{} (Tribute in Light) · boat{fill} · plane{y,facing} · tree{blossom:true}
+towers{h,fill} (Zwillingstürme, ohne Einschlag) · lights{} (Tribute in Light) · boat{fill} · plane{y,facing} · tree{blossom:true} ·
+mountains{h,w} (Alpen) · hut (Almhütte) · pedestal{w,h,text} (Denkmal-Sockel, Figur mit y_off = h draufstellen)
 
 ### Layout-Faustregeln
 - Boden liegt bei ~66 % Höhe; Captions sitzen darunter – nichts Wichtiges unter den Boden setzen.
