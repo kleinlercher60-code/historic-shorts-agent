@@ -1,0 +1,404 @@
+{
+  "slug": "9-11-ten-facts",
+  "title": "10 facts about 9/11",
+  "yt_title": "10 Facts About 9/11 You Should Know 🕯️ #history #shorts",
+  "yt_description": "September 11, 2001 in ten facts – the attacks, the victims, the people who helped, and the tree that survived. In memory of the 2,977 people who were killed.",
+  "tags": [
+    "history",
+    "9/11",
+    "september 11",
+    "2001",
+    "new york",
+    "world trade center",
+    "shorts"
+  ],
+  "sources": [
+    "https://www.911memorial.org/",
+    "https://abc7.com/911-september-11-victims-facts-about-how-many-planes-were-hijacked-on/11006480/",
+    "https://www.history.com/articles/september-11-boatlift-evacuation",
+    "https://migflug.com/afterburner/?p=21459773",
+    "https://www.dawn.com/news/amp/11336",
+    "https://911memorial.org/connect/blog/stories-hope-survivor-tree"
+  ],
+  "scenes": [
+    {
+      "narration": "Nineteen hijackers. Four planes. One morning.",
+      "title": "9/11: 10 FACTS",
+      "year": "1 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "towers",
+          "x": 0.5,
+          "h": 470
+        },
+        {
+          "type": "text",
+          "x": 0.17,
+          "y": 0.42,
+          "text": "19",
+          "size": 110,
+          "t": 0.1
+        },
+        {
+          "type": "text",
+          "x": 0.17,
+          "y": 0.47,
+          "text": "hijackers",
+          "size": 46,
+          "t": 0.1
+        },
+        {
+          "type": "text",
+          "x": 0.83,
+          "y": 0.42,
+          "text": "4",
+          "size": 110,
+          "t": 1.1
+        },
+        {
+          "type": "text",
+          "x": 0.83,
+          "y": 0.47,
+          "text": "planes",
+          "size": 46,
+          "t": 1.1
+        },
+        {
+          "type": "text",
+          "x": 0.83,
+          "y": 0.53,
+          "text": "1",
+          "size": 110,
+          "t": 1.8
+        },
+        {
+          "type": "text",
+          "x": 0.83,
+          "y": 0.58,
+          "text": "morning",
+          "size": 46,
+          "t": 1.8
+        }
+      ]
+    },
+    {
+      "narration": "2,977 people were killed.",
+      "year": "2 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.32,
+          "text": "2,977",
+          "size": 170,
+          "color": "ink"
+        },
+        {
+          "type": "army",
+          "n": 9,
+          "x0": 0.1,
+          "x1": 0.9,
+          "scale": 0.4,
+          "props": [],
+          "pose": "stand",
+          "face": "sad",
+          "color": "grey"
+        }
+      ]
+    },
+    {
+      "narration": "Among them, 343 firefighters.",
+      "year": "3 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.32,
+          "text": "343",
+          "size": 170,
+          "color": "red"
+        },
+        {
+          "type": "army",
+          "n": 5,
+          "x0": 0.15,
+          "x1": 0.85,
+          "scale": 0.55,
+          "props": [
+            "firehelmet"
+          ],
+          "pose": "stand",
+          "face": "neutral"
+        }
+      ]
+    },
+    {
+      "narration": "Both towers fell within 102 minutes of the first impact.",
+      "year": "4 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "towers",
+          "x": 0.5,
+          "h": 520,
+          "fill": "paper",
+          "color": "grey"
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.27,
+          "text": "8:46 - 10:28",
+          "size": 90
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.34,
+          "text": "102 MIN",
+          "size": 120,
+          "color": "red",
+          "t": 1.3
+        }
+      ]
+    },
+    {
+      "narration": "Flight 93's passengers fought back. It crashed in a Pennsylvania field.",
+      "year": "5 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "hill",
+          "x": 0.5,
+          "w": 1.2,
+          "h": 90,
+          "fill": "green"
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.3,
+          "text": "FLIGHT 93",
+          "size": 110
+        }
+      ],
+      "actors": [
+        {
+          "x": 0.25,
+          "pose": "fight",
+          "face": "angry",
+          "scale": 0.8
+        },
+        {
+          "label": "Passengers",
+          "x": 0.5,
+          "pose": "fight",
+          "face": "angry",
+          "scale": 0.8
+        },
+        {
+          "x": 0.75,
+          "facing": -1,
+          "pose": "fight",
+          "face": "angry",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "narration": "Boats evacuated up to half a million people from Manhattan.",
+      "year": "6 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "city",
+          "x": 0.5,
+          "w": 0.9,
+          "scale": 0.75
+        },
+        {
+          "type": "river"
+        },
+        {
+          "type": "boat",
+          "x": 0.22,
+          "scale": 0.8,
+          "front": true
+        },
+        {
+          "type": "boat",
+          "x": 0.55,
+          "scale": 0.9,
+          "t": 0.8,
+          "front": true
+        },
+        {
+          "type": "boat",
+          "x": 0.84,
+          "scale": 0.75,
+          "t": 1.5,
+          "front": true
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.27,
+          "text": "500,000",
+          "size": 140,
+          "color": "blue",
+          "t": 1.3
+        }
+      ]
+    },
+    {
+      "narration": "For the first time, all US civilian flights were grounded.",
+      "year": "7 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "plane",
+          "x": 0.5,
+          "scale": 1.3
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.32,
+          "text": "US AIRSPACE: CLOSED",
+          "size": 90,
+          "color": "red",
+          "t": 1.2,
+          "wrap": 12
+        }
+      ]
+    },
+    {
+      "narration": "Tiny Gander, Canada, took in 6,600 stranded travelers.",
+      "year": "8 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "sign",
+          "x": 0.15,
+          "text": "GANDER",
+          "scale": 0.8
+        },
+        {
+          "type": "text",
+          "x": 0.15,
+          "y": 0.46,
+          "text": "pop. 10,000",
+          "size": 50
+        }
+      ],
+      "actors": [
+        {
+          "label": "Locals",
+          "x": 0.4,
+          "pose": "wave",
+          "face": "happy",
+          "scale": 0.85
+        },
+        {
+          "label": "Travelers",
+          "x": 0.75,
+          "facing": -1,
+          "pose": "stand",
+          "face": "neutral",
+          "scale": 0.85,
+          "enter": {
+            "t": 0.6,
+            "from": "right"
+          },
+          "actions": [
+            {
+              "t": 2.0,
+              "do": "face",
+              "face": "happy"
+            },
+            {
+              "t": 2.0,
+              "do": "pose",
+              "pose": "wave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "The fires at Ground Zero burned for 99 days.",
+      "year": "9 / 10",
+      "zoom": 0.03,
+      "objects": [
+        {
+          "type": "hill",
+          "x": 0.5,
+          "w": 0.8,
+          "h": 160,
+          "fill": "grey"
+        },
+        {
+          "type": "text",
+          "x": 0.5,
+          "y": 0.32,
+          "text": "99 DAYS",
+          "size": 150,
+          "color": "red",
+          "t": 1.5
+        }
+      ],
+      "actors": [
+        {
+          "x": 0.16,
+          "pose": "hold",
+          "face": "neutral",
+          "props": [
+            "firehelmet"
+          ],
+          "scale": 0.8
+        },
+        {
+          "x": 0.84,
+          "facing": -1,
+          "pose": "hold",
+          "face": "neutral",
+          "props": [
+            "firehelmet"
+          ],
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "narration": "And a pear tree, pulled from the rubble, still blooms there today.",
+      "year": "10 / 10",
+      "zoom": 0.04,
+      "objects": [
+        {
+          "type": "lights",
+          "x": 0.72,
+          "scale": 0.9
+        },
+        {
+          "type": "tree",
+          "x": 0.35,
+          "scale": 1.1,
+          "blossom": true
+        },
+        {
+          "type": "text",
+          "x": 0.35,
+          "y": 0.27,
+          "text": "SURVIVOR TREE",
+          "size": 80,
+          "color": "green",
+          "t": 2.2
+        }
+      ],
+      "pad": 1.2
+    }
+  ]
+}

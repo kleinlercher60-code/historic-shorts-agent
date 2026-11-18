@@ -321,6 +321,12 @@ def draw_figure(cv, st, key):
             pts = [(hx + math.cos(math.radians(a)) * rr, hy - hr * .15 + math.sin(math.radians(a)) * rr) for a in range(180, 361, 15)]
             pts = [(hx - rr - 14 * s, hy - hr * .05)] + pts + [(hx + rr + 14 * s, hy - hr * .05)]
             cv.poly(pts, fill=o_col(st.get("helmet_color"), (96, 112, 84)), outline=c, w=w * .6, key=key + "shelm")
+        if "firehelmet" in props:
+            rr = hr + 8 * s
+            pts = [(hx + math.cos(math.radians(a)) * rr, hy - hr * .2 + math.sin(math.radians(a)) * rr) for a in range(180, 361, 15)]
+            pts = [(hx - rr - 10 * s * facing, hy - hr * .1)] + pts + [(hx + rr + 30 * s * facing, hy + hr * .05)]
+            cv.poly(pts, fill=RED, outline=c, w=w * .6, key=key + "fhelm")
+            cv.circle((hx + hr * .1 * facing, hy - hr * .75), hr * .22, fill=GOLD, outline=c, w=w * .3, key=key + "fbadge")
         if "ushanka" in props:
             cv.poly([(hx - hr * 1.0, hy - hr * .35), (hx - hr * .9, hy - hr * 1.25), (hx + hr * .9, hy - hr * 1.25), (hx + hr * 1.0, hy - hr * .35)],
                     fill=(120, 95, 70), outline=c, w=w * .6, key=key + "ush")
@@ -478,6 +484,11 @@ def draw_object(cv, o, t, key):
     elif typ == "tree":
         cv.line((x, GROUND_Y), (x, GROUND_Y - 260 * s), LINE_W * 1.6, (110, 75, 45), key + "tr")
         cv.circle((x, GROUND_Y - 330 * s), 120 * s, fill=GREEN, outline=c, key=key + "cr")
+        if o.get("blossom"):
+            r = cv.rng(key + "bl")
+            for i in range(14):
+                a = r.uniform(0, 2 * math.pi); rr = r.uniform(0, 95) * s
+                cv.circle((x + math.cos(a) * rr, GROUND_Y - 330 * s + math.sin(a) * rr), 13 * s, fill=WHITE, outline=c, w=3, key=key + f"bs{i}")
     elif typ == "sun":
         cx_, cy_ = x, o.get("y", .24) * H
         for i in range(10):
@@ -593,6 +604,38 @@ def draw_object(cv, o, t, key):
             cv.poly([(px - 28 * s, py - 18 * s), (px + 28 * s, py - 18 * s), (px + 28 * s, py + 18 * s), (px - 28 * s, py + 18 * s)], fill=BLUE, outline=c, w=4, key=key + f"bx{i}")
         if o.get("label"):
             cv.text((x, y0 - 40 * s), o["label"], size=int(50 * s), c=c)
+    elif typ == "towers":   # two tall outlined towers (memorial-style, no impact imagery)
+        ht = o.get("h", 620) * s; tw = 120 * s; gap = 40 * s
+        fill = o.get("fill") and col(o["fill"]) or (220, 224, 230)
+        for i, dx in enumerate((-(tw + gap / 2), gap / 2)):
+            x0 = x + dx; hh = ht if i == 0 else ht * .97
+            cv.poly([(x0, GROUND_Y), (x0, GROUND_Y - hh), (x0 + tw, GROUND_Y - hh), (x0 + tw, GROUND_Y)], fill=fill, outline=c, key=key + f"tw{i}")
+            for j in range(1, 4):
+                cv.line((x0 + tw * j / 4, GROUND_Y - hh + 10), (x0 + tw * j / 4, GROUND_Y - 10), LINE_W * .3, GREY, key + f"tl{i}{j}")
+        if i == 0 and o.get("antenna", True):
+            pass
+        cv.line((x - tw / 2 - gap / 2, GROUND_Y - ht), (x - tw / 2 - gap / 2, GROUND_Y - ht - 110 * s), LINE_W * .6, c, key + "ant")
+    elif typ == "lights":   # Tribute in Light: two vertical beams
+        for i, dx in enumerate((-80, 80)):
+            bx = x + dx * s
+            cv.poly([(bx - 40 * s, GROUND_Y), (bx - 70 * s, 260), (bx + 70 * s, 260), (bx + 40 * s, GROUND_Y)], fill=(200, 220, 245), outline=None, key=key + f"li{i}")
+    elif typ == "boat":
+        f = o.get("facing", 1)
+        y = GROUND_Y + 30 + math.sin(t * 2.5 + x) * 6
+        wd = 260 * s
+        cv.poly([(x - wd / 2, y - 60 * s), (x + wd / 2, y - 60 * s), (x + wd * .38, y), (x - wd * .38, y)], fill=o.get("fill") and col(o["fill"]) or WHITE, outline=c, key=key + "hull")
+        cv.poly([(x - wd * .25, y - 60 * s), (x - wd * .25, y - 130 * s), (x + wd * .2, y - 130 * s), (x + wd * .2, y - 60 * s)], fill=(236, 226, 205), outline=c, key=key + "cab")
+        for i in range(3):
+            cv.circle((x - wd * .15 + i * wd * .14, y - 95 * s), 11 * s, fill=BLUE, outline=c, w=3, key=key + f"win{i}")
+    elif typ == "plane":
+        f = o.get("facing", 1); y = o.get("y", (GROUND_Y - 70) / H) * H
+        L = 300 * s
+        body = [(x + math.cos(math.radians(a)) * L / 2, y + math.sin(math.radians(a)) * 34 * s) for a in range(0, 360, 20)]
+        cv.poly(body, fill=WHITE, outline=c, key=key + "body")
+        cv.poly([(x - 30 * s * f, y), (x + 20 * s * f, y), (x - 60 * s * f, y + 110 * s), (x - 95 * s * f, y + 110 * s)], fill=(220, 224, 230), outline=c, w=6, key=key + "wing")
+        cv.poly([(x - L * .38 * f, y - 20 * s), (x - L * .5 * f, y - 100 * s), (x - L * .42 * f, y - 100 * s), (x - L * .28 * f, y - 20 * s)], fill=(220, 224, 230), outline=c, w=6, key=key + "tail")
+        for i in range(5):
+            cv.dot((x - 60 * s * f + i * 35 * s * f, y - 8 * s), 6 * s, fill=BLUE)
     elif typ == "army":
         n = o.get("n", 6); x0 = o.get("x0", .1) * W; x1 = o.get("x1", .9) * W
         f = o.get("facing", 1)

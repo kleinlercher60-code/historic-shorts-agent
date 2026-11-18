@@ -23,6 +23,8 @@ Ablauf unten ohne Rückfragen durch und lieferst die fertige MP4.
    - Letzte Szene = trockene Schlusspointe (loopt gut zurück zum Hook). Kein „Like & subscribe“
      im Voice-Over – der Abspann-Sticker „Follow @handle“ kommt automatisch.
    - Gewalt nur cartoonhaft (X-Augen, umfallen). Keine echten Fotos, keine Logos.
+   - **Ausnahme Tragödien der jüngeren Zeit mit vielen zivilen Opfern** (z. B. 9/11, Holocaust, Genozide):
+     keine Witze, keine Darstellung des Tötens – sachlich-respektvoller Ton im gleichen Zeichenstil.
    - Jede Szene braucht eine sichtbare Aktion (Pose-Wechsel, Sprechblase, Umfallen, Objekt erscheint).
      Zeitpunkte `t` in Sekunden relativ zum Szenenstart; Szene dauert ≈ Wörter / 3 s.
 4. **Vorschau** – `python3 pipeline/make_short.py scripts/<slug>.json --preview`,
@@ -71,7 +73,7 @@ Ablauf unten ohne Rückfragen durch und lieferst die fertige MP4.
   crown_self, walk, run, wave, dance, laugh
 - **Gesichter**: neutral, happy, sad, angry, shock, scared, smug, laugh, dead
 - **Props**: crown, laurel, helmet, hat, beard, toga, cape, armor, sword, spear, shield, scroll, torch,
-  mustache, cap (Schirmmütze), steelhelmet (WWII-Helm, ohne Abzeichen), ushanka, flag (rote Fahne), whiteflag,
+  firehelmet, mustache, cap (Schirmmütze), steelhelmet (WWII-Helm, ohne Abzeichen), ushanka, flag (rote Fahne), whiteflag,
   camera, watch (1 Armbanduhr), watches (an beiden Handgelenken)
 - `y_off`: Figur steht erhöht (Pixel über dem Boden, z. B. 270 = auf dem Reichstag-Dach)
 - **Aktionen** (`{"t":…, "do":…}`):
@@ -84,7 +86,8 @@ hill{w,h} · wall{w,h} · city{w,label} · temple{w} · throne · grave{text} ·
 basket{babies,bob} · wolf{facing} · sign{text} · text{text,y,size,color,angle,wrap} ·
 arrow{x1,y1,x2,y2} · map{y,pin:[px,py],label} (grobe Italien-Silhouette) · blood{y} (Cartoon-Klecks) ·
 army{n,x0,x1,facing,props,pose,scale} ·
-bunker{w,h,label} · reichstag{w} (Kuppel-Gerippe, ~300 px hoch × scale) · warmap{y,w,boxes:[[bx,by],…],label} (Lagekarte auf Staffelei)
+bunker{w,h,label} · reichstag{w} (Kuppel-Gerippe, ~300 px hoch × scale) · warmap{y,w,boxes:[[bx,by],…],label} (Lagekarte auf Staffelei) ·
+towers{h,fill} (Zwillingstürme, ohne Einschlag) · lights{} (Tribute in Light) · boat{fill} · plane{y,facing} · tree{blossom:true}
 
 ### Layout-Faustregeln
 - Boden liegt bei ~66 % Höhe; Captions sitzen darunter – nichts Wichtiges unter den Boden setzen.
