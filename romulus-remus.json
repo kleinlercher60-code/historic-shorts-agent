@@ -1,0 +1,388 @@
+{
+  "slug": "romulus-remus",
+  "title": "How Rome got its name",
+  "yt_title": "Rome Was Founded With a Murder 💀 #history #shorts",
+  "yt_description": "Romulus, Remus, a wolf, and the worst sibling argument in history. (Legend as told by Livy.)",
+  "tags": [
+    "history",
+    "rome",
+    "romulus",
+    "remus",
+    "shorts",
+    "ancient rome"
+  ],
+  "sources": [
+    "Livy, Ab Urbe Condita 1.3–1.7",
+    "https://www.britannica.com/biography/Romulus-and-Remus"
+  ],
+  "scenes": [
+    {
+      "narration": "Rome was founded by twins raised by a wolf. And that's the normal part.",
+      "title": "ROMULUS & REMUS",
+      "year": "c. 771 BC",
+      "objects": [
+        {
+          "type": "basket",
+          "x": 0.38,
+          "babies": 2,
+          "scale": 1.2
+        },
+        {
+          "type": "wolf",
+          "x": 0.68,
+          "facing": -1,
+          "t": 1.4,
+          "scale": 1.1
+        }
+      ]
+    },
+    {
+      "narration": "Their uncle, the king, threw them in a river. A wolf adopted them.",
+      "year": "c. 771 BC",
+      "objects": [
+        {
+          "type": "river"
+        },
+        {
+          "type": "basket",
+          "x": 0.72,
+          "babies": 2,
+          "bob": 14
+        }
+      ],
+      "actors": [
+        {
+          "label": "Uncle Amulius",
+          "x": 0.3,
+          "props": [
+            "crown",
+            "cape",
+            "beard"
+          ],
+          "face": "smug",
+          "pose": "point",
+          "actions": [
+            {
+              "t": 1.8,
+              "do": "pose",
+              "pose": "laugh"
+            },
+            {
+              "t": 1.8,
+              "do": "face",
+              "face": "laugh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "They grew up, killed the uncle, and decided to build a city.",
+      "actors": [
+        {
+          "label": "Romulus",
+          "x": 0.14,
+          "pose": "fight",
+          "props": [
+            "sword"
+          ],
+          "face": "angry",
+          "actions": [
+            {
+              "t": 1.6,
+              "do": "pose",
+              "pose": "cheer"
+            },
+            {
+              "t": 1.6,
+              "do": "remove_prop",
+              "prop": "sword"
+            }
+          ]
+        },
+        {
+          "label": "Remus",
+          "x": 0.86,
+          "facing": -1,
+          "pose": "fight",
+          "props": [
+            "spear"
+          ],
+          "face": "angry",
+          "actions": [
+            {
+              "t": 1.6,
+              "do": "pose",
+              "pose": "cheer"
+            }
+          ]
+        },
+        {
+          "x": 0.36,
+          "props": [
+            "crown",
+            "beard"
+          ],
+          "face": "scared",
+          "pose": "scared",
+          "actions": [
+            {
+              "t": 0.9,
+              "do": "fall"
+            }
+          ],
+          "facing": -1,
+          "scale": 0.85
+        }
+      ],
+      "shakes": [
+        0.9
+      ]
+    },
+    {
+      "narration": "Problem: they couldn't agree where. So they counted birds.",
+      "actors": [
+        {
+          "label": "Romulus",
+          "x": 0.25,
+          "pose": "point",
+          "face": "angry",
+          "actions": [
+            {
+              "t": 0.3,
+              "do": "say",
+              "text": "HERE!",
+              "dur": 1.3,
+              "shout": true
+            }
+          ]
+        },
+        {
+          "label": "Remus",
+          "x": 0.75,
+          "facing": -1,
+          "pose": "point",
+          "face": "angry",
+          "actions": [
+            {
+              "t": 1.2,
+              "do": "say",
+              "text": "NO, HERE!",
+              "dur": 1.3,
+              "shout": true
+            },
+            {
+              "t": 2.6,
+              "do": "pose",
+              "pose": "think"
+            },
+            {
+              "t": 2.6,
+              "do": "face",
+              "face": "neutral"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Remus saw six birds. Romulus saw twelve, and started building a wall.",
+      "objects": [
+        {
+          "type": "sign",
+          "x": 0.88,
+          "text": "6 birds",
+          "scale": 0.85
+        },
+        {
+          "type": "sign",
+          "x": 0.12,
+          "text": "12 birds",
+          "scale": 0.85,
+          "t": 1.0
+        },
+        {
+          "type": "wall",
+          "x": 0.5,
+          "w": 0.3,
+          "h": 150,
+          "t": 2.4
+        }
+      ],
+      "actors": [
+        {
+          "label": "Remus",
+          "x": 0.68,
+          "facing": -1,
+          "pose": "sad",
+          "face": "sad"
+        },
+        {
+          "label": "Romulus",
+          "x": 0.32,
+          "pose": "stand",
+          "face": "neutral",
+          "actions": [
+            {
+              "t": 1.0,
+              "do": "pose",
+              "pose": "cheer"
+            },
+            {
+              "t": 1.0,
+              "do": "face",
+              "face": "smug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Remus jumped over it. Just to mock him.",
+      "objects": [
+        {
+          "type": "wall",
+          "x": 0.5,
+          "w": 0.3,
+          "h": 150
+        }
+      ],
+      "actors": [
+        {
+          "label": "Romulus",
+          "x": 0.1,
+          "pose": "angry",
+          "face": "angry"
+        },
+        {
+          "label": "Remus",
+          "x": 0.78,
+          "facing": -1,
+          "face": "laugh",
+          "actions": [
+            {
+              "t": 0.2,
+              "do": "jump",
+              "dur": 0.9,
+              "h": 260
+            },
+            {
+              "t": 0.2,
+              "do": "walk_to",
+              "x": 0.28,
+              "dur": 0.9,
+              "face_after": -1
+            },
+            {
+              "t": 1.2,
+              "do": "pose",
+              "pose": "dance"
+            },
+            {
+              "t": 1.2,
+              "do": "say",
+              "text": "nice wall lol",
+              "dur": 1.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "narration": "Romulus killed him. Then named the city after himself.",
+      "year": "753 BC",
+      "objects": [
+        {
+          "type": "text",
+          "x": 0.66,
+          "y": 0.42,
+          "text": "ROMA",
+          "size": 150,
+          "color": "red",
+          "t": 1.3,
+          "angle": 6
+        }
+      ],
+      "actors": [
+        {
+          "label": "Remus",
+          "x": 0.4,
+          "facing": -1,
+          "face": "shock",
+          "pose": "scared",
+          "actions": [
+            {
+              "t": 0.35,
+              "do": "fall"
+            }
+          ]
+        },
+        {
+          "label": "Romulus",
+          "x": 0.2,
+          "pose": "fight",
+          "props": [
+            "sword"
+          ],
+          "face": "angry",
+          "actions": [
+            {
+              "t": 1.3,
+              "do": "add_prop",
+              "prop": "crown"
+            },
+            {
+              "t": 1.3,
+              "do": "remove_prop",
+              "prop": "sword"
+            },
+            {
+              "t": 1.3,
+              "do": "pose",
+              "pose": "crown_self"
+            },
+            {
+              "t": 1.3,
+              "do": "face",
+              "face": "smug"
+            }
+          ]
+        }
+      ],
+      "shakes": [
+        0.35
+      ]
+    },
+    {
+      "narration": "And that's how Rome was born. Great start.",
+      "objects": [
+        {
+          "type": "city",
+          "x": 0.68,
+          "w": 0.55,
+          "scale": 0.8
+        },
+        {
+          "type": "grave",
+          "x": 0.12,
+          "text": "REMUS",
+          "scale": 0.9
+        }
+      ],
+      "actors": [
+        {
+          "label": "King Romulus",
+          "x": 0.36,
+          "props": [
+            "crown",
+            "cape"
+          ],
+          "face": "smug",
+          "pose": "wave",
+          "scale": 0.95
+        }
+      ],
+      "pad": 0.9
+    }
+  ]
+}
